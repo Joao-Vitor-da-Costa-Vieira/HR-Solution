@@ -11,6 +11,8 @@ Solução desenvolvida para Hackaton da FATEC Mogi das Cruzes sobre aplicação 
 
 #### Backend
 
+Antes de executar o backend, é necessário já se ter criado um banco no MySQL.
+
 Para configurar o aplicativo, é necessário alterar as properties do arquivo disponível em backend/src/main/resources/application.properties, colocando as credenciais corretas para acesso ao banco de dados MySQL.
 ```
 # ===============================
