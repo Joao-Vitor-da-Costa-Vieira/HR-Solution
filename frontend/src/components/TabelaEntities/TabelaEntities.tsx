@@ -1,48 +1,13 @@
-import { useEffect, useState } from "react";
-import type { Entidade } from "../model/Entidade";
-import { adicionarEntidade, atualizarEntidade, consultarTodasEntidades, deletarEntidade } from "../service/api";
+import type { Entidade } from "../../model/Entidade";
+import { atualizarEntidade, deletarEntidade } from "../../service/api";
+import "./TabelaEntities.css";
 
-export const TabelaEntities = () => {
-    const [entidades, setEntidades] = useState<Entidade[]>([]);
+type Props = {
+    entidades: Entidade[];
+    setEntidades: (e: Entidade[]) => void;
+}
 
-    useEffect(() => {
-        const obterDados = async () => {
-        const dados = await consultarTodasEntidades();
-
-        if (dados !== undefined){
-            setEntidades(dados);    
-        }
-            
-        };
-
-        obterDados();
-    }, []);
-
-    const confirmarAdicaoEntidade = async () => {
-        if (confirm("Deseja adicionar nova entidade?")){
-
-            try {
-                const nome = prompt("Insira um nome de entidade:")
-            
-                if (!nome){
-                    throw Error("Nome inválido")
-                }
-
-                const entidade: Entidade = {
-                    id: 0,
-                    nome: nome
-                };
-
-                const entidadeAdicionada = await adicionarEntidade(entidade);
-
-                const novasEntidades = [...entidades, entidadeAdicionada];
-
-                setEntidades(novasEntidades);
-            } catch (error){
-                alert(error instanceof Error ? error.message : String(error));
-            }            
-        }
-    }
+export const TabelaEntities = ({entidades, setEntidades}: Props) => {
 
     const confirmarAtualizacaoEntidade = async (entidade: Entidade) => {
         const nome = prompt(`Insira um novo nome para a entidade (nome atual = ${entidade.nome})`);
@@ -126,10 +91,6 @@ export const TabelaEntities = () => {
                         })
                 }
             </tbody>
-
-            <button onClick={confirmarAdicaoEntidade}>
-                Adicionar nova entidade
-            </button>
         </table>
     )
 }
