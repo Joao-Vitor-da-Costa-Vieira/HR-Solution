@@ -1,2 +1,41 @@
 # HR-Solution
 Solução desenvolvida para Hackaton da FATEC Mogi das Cruzes sobre aplicação de teoria de liderança de RH
+
+### Tecnologias
+- Java 21
+- Spring Boot
+- React
+- MySQL
+
+### Como executar
+
+#### Backend
+
+Para configurar o aplicativo, é necessário alterar as properties do arquivo disponível em backend/src/main/resources/application.properties, colocando as credenciais corretas para acesso ao banco de dados MySQL.
+```
+# ===============================
+# = CONFIGURAÇÃO DO BANCO MYSQL =
+# ===============================
+spring.datasource.url=jdbc:mysql://localhost:3306/hr_solution
+spring.datasource.username=root
+spring.datasource.password=admin123
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+```
+
+#### Frontend
+
+```
+cd frontend/
+
+# Instalar dependências
+npm install
+
+# Executar o frontend
+npm run dev
+```
+
+### Referências
+
+npm create vite@latest frontend -- --template react-ts
+- [Guia Vite](https://pt.vite.dev/guide/)
+- [Spring initializr](https://start.spring.io)
