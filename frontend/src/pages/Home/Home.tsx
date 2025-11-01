@@ -4,6 +4,7 @@ import { PerguntaDissertativa } from "../../components/PerguntaDissertativa/Perg
 import PerguntaLikert from "../../components/PerguntaLikert/PerguntaLikert";
 import { useState, type FormEvent } from "react";
 import ChatGemini from "../../components/ChatGemini/ChatGemini";
+import QuadroLiderancaSituacional from "../../components/QuadroLiderancaSituacional/QuadroLiderancaSituacional";
 
 export const Home = () => {
     const [respostaDissertativa, setRespostaDissertativa] = useState("");
@@ -18,9 +19,9 @@ export const Home = () => {
         <div>
             <h1 id="titulo">Bem vindo a página principal</h1>
 
-            <Link to={"/gerenciarEntidades/"}>
+            <Link to={"/crudSimples"}>
                 <button style={{backgroundColor: 'white', color: 'black'}}>
-                    Ir para "Gerenciar Entidades"
+                    Ir para "Crud Simples"
                 </button>
             </Link>
 
@@ -46,6 +47,8 @@ export const Home = () => {
             </form>
 
             <ChatGemini/>
+
+            <QuadroLiderancaSituacional/>
         </div>
     );
 }

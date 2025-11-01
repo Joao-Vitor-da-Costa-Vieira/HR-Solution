@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { adicionarEntidade, consultarTodasEntidades } from "../../service/api";
 import type { Entidade } from "../../model/Entidade";
 
-export const GerenciarEntidades = () => {
+export const CrudSimples = () => {
     const [entidades, setEntidades] = useState<Entidade[]>([]);
     
     useEffect(() => {
