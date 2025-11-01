@@ -3,6 +3,7 @@ import "./Home.css"
 import { PerguntaDissertativa } from "../../components/PerguntaDissertativa/PerguntaDissertativa";
 import PerguntaLikert from "../../components/PerguntaLikert/PerguntaLikert";
 import { useState, type FormEvent } from "react";
+import ChatGemini from "../../components/ChatGemini/ChatGemini";
 
 export const Home = () => {
     const [respostaDissertativa, setRespostaDissertativa] = useState("");
@@ -43,6 +44,8 @@ export const Home = () => {
                     Enviar
                 </button>
             </form>
+
+            <ChatGemini/>
         </div>
     );
 }
