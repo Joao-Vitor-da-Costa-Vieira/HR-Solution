@@ -24,6 +24,16 @@ spring.datasource.password=admin123
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 ```
 
+Também deve-se colocar a chave do API do Gemini no mesmo arquivo: 
+```
+# ===============================
+# = CONFIGURAÇÃO DO GEMINI =
+# ===============================
+gemini.api.key=SUA_CHAVE_API
+gemini.api.url=https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent
+
+```
+
 #### Frontend
 
 ```
