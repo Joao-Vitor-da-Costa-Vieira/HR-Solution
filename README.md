@@ -34,6 +34,8 @@ gemini.api.url=https://generativelanguage.googleapis.com/v1beta/models/gemini-2.
 
 ```
 
+Para acessar a documentação da API usando Swagger, navegue para: ```http://localhost:8080/swagger-ui/index.html```.
+
 #### Frontend
 
 ```
