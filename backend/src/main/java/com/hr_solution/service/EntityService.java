@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.hr_solution.model.EntityTest;
+import com.hr_solution.model.entities.EntityTest;
 import com.hr_solution.repository.EntidadeTesteRepository;
 
 
