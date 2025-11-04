@@ -25,6 +25,12 @@ export const Home = () => {
                 </button>
             </Link>
 
+            <Link to={"/questionario"}>
+                <button style={{backgroundColor: 'white', color: 'black'}}>
+                    Questionário
+                </button>
+            </Link>
+
             <form onSubmit={handleSubmit}>
                 <PerguntaDissertativa
                     name="pergunta-1"
