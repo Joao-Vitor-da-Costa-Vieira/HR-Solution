@@ -1,6 +1,6 @@
 const PATH = "???";
 
-export const consultarRespostas = async () => {
+export const consultarPerguntas = async () => {
     /*
     
     const resposta = await fetch(`${PATH}/listall`);

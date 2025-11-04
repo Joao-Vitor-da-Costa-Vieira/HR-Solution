@@ -2,14 +2,14 @@ import { useEffect, useState } from 'react';
 import PerguntaDissertativa from '../../components/PerguntaDissertativa/PerguntaDissertativa';
 import PerguntaLikert from '../../components/PerguntaLikert/PerguntaLikert';
 import './Questionario.css'
-import { consultarRespostas } from '../../service/respostas';
+import { consultarPerguntas } from '../../service/perguntas';
 
 export function Questionario() {
     const [perguntas, setPerguntas] = useState<any[]>([]);
 
     useEffect(() => {
         const obterDados = async () => {
-            const perguntas = await consultarRespostas();
+            const perguntas = await consultarPerguntas();
 
             setPerguntas(perguntas);
         }
