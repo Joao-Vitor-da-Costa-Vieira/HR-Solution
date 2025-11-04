@@ -12,6 +12,11 @@ import lombok.Setter;
 @Setter
 public class Pergunta {
 
+    /**
+     * FIXME: poderão haver apenas perguntas alternativas, cada alternativa com um peso
+     * 
+     * */ 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

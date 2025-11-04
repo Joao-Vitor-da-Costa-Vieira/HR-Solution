@@ -16,10 +16,21 @@ import java.util.List;
 @NoArgsConstructor
 public class Questionario {
 
+    /*
+        TODO: pensar nos dados certinho
+        - descrição
+        - qual o processo seletivo
+        - tipo de vaga
+        - data do processo
+        - data limite
+        - quantidade perguntas
+        - pergunta com peso maior 
+        - qual eixo a pergunta avalia
+        - porcentagens (o cara é 70% atitude, 50% capacidade)
+    */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String titulo;
 
     @Column(length = 2000)

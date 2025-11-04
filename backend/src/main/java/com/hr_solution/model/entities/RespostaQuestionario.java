@@ -19,6 +19,8 @@ public class RespostaQuestionario {
     private String nomeCandidato;
     private String emailCandidato;
     //private String cpfCandidato;
+    // TODO: data que o usuário fez
+    
 
     @ManyToOne
     @JoinColumn(name = "questionario_id")
