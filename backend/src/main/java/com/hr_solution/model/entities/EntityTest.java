@@ -1,4 +1,4 @@
-package com.hr_solution.model;
+package com.hr_solution.model.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
