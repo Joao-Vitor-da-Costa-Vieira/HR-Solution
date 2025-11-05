@@ -8,20 +8,8 @@ export function Navegacao(){
                 • Home
             </Link>
 
-            <Link to={"/gerenciarQuestionario"}>
-                • Gerenciar Questionários
-            </Link>
-
             <Link to={"/crudSimples"}>
                 • Crud Simples
-            </Link>
-
-            <Link to={"/questionario"}>
-                • Questionário
-            </Link>
-
-            <Link to={"/analise"}>
-                • Análise Questionário
             </Link>
 
             <Link to={"/testesLoucos"}>

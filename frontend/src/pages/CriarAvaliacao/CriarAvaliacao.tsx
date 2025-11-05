@@ -1,11 +1,10 @@
 import { Navegacao } from "../../components/Navegacao/Navegacao"
 
-export function GerenciarQuestionario(){
-    return(
+export function CriarAvaliacao(){
+    return (
         <div>
             <Navegacao/>
-
-            <h2>Adicione e edite seu questionário</h2>
+            <p>Criar Avaliação</p>
         </div>
     );
 }
