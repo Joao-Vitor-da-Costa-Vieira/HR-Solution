@@ -8,6 +8,10 @@ export function Navegacao(){
                 • Home
             </Link>
 
+            <Link to={"/gerenciarQuestionario"}>
+                • Gerenciar Questionários
+            </Link>
+
             <Link to={"/crudSimples"}>
                 • Crud Simples
             </Link>

@@ -6,6 +6,7 @@ import { CrudSimples } from './pages/CrudSimples/CrudSimples'
 import { Questionario } from './pages/Questionario/Questionario';
 import { Analise } from './pages/Analise/Analise';
 import { TestesLoucos } from './pages/TestesLoucos/TestesLoucos';
+import { GerenciarQuestionario } from './pages/GerenciarQuestionario/GerenciarQuestionario';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path='/questionario' element={<Questionario/>} />
         <Route path='/analise' element={<Analise />} />
         <Route path="/testesLoucos" element={<TestesLoucos/>} />
+        <Route path="/gerenciarQuestionario" element={<GerenciarQuestionario/>} />
       </Routes>
     </Router>
   )
