@@ -1,5 +1,7 @@
 package com.hr_solution.model.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,8 +17,9 @@ public class RespostaPergunta {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "resposta_questionario_id")
-    private RespostaQuestionario respostaQuestionario;
+    @JoinColumn(name = "resposta_avaliacao_id")
+    @JsonIgnore
+    private RespostaAvaliacao respostaAvaliacao;
 
     @ManyToOne
     @JoinColumn(name = "pergunta_id")

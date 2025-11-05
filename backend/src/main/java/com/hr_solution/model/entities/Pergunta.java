@@ -1,5 +1,6 @@
 package com.hr_solution.model.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.hr_solution.model.enuns.TipoPergunta;
 
 import jakarta.persistence.*;
@@ -15,7 +16,8 @@ public class Pergunta {
     /**
      * FIXME: poderão haver apenas perguntas alternativas, cada alternativa com um peso
      * 
-     * */ 
+     *
+     */ 
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,6 +33,7 @@ public class Pergunta {
     private Integer ordem;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "questionario_id")
-    private Questionario questionario;
+    @JoinColumn(name = "avaliacao_id")
+    @JsonIgnore
+    private Avaliacao avaliacao;
 }

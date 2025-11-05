@@ -10,11 +10,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "questionario")
+@Table(name = "avaliacao")
 @Getter
 @Setter
 @NoArgsConstructor
-public class Questionario {
+public class Avaliacao {
 
     /*
         TODO: pensar nos dados certinho
@@ -41,7 +41,7 @@ public class Questionario {
     private OffsetDateTime criadoEm = OffsetDateTime.now();
 
     @OneToMany(
-        mappedBy = "questionario",
+        mappedBy = "avaliacao",
         cascade = CascadeType.ALL,
         orphanRemoval = true,
         fetch = FetchType.LAZY
@@ -50,18 +50,18 @@ public class Questionario {
 
     public void adicionarPergunta(Pergunta p) {
         perguntas.add(p);
-        p.setQuestionario(this);
+        p.setAvaliacao(this);
     }
 
     public void removerPergunta(Pergunta p) {
         perguntas.remove(p);
-        p.setQuestionario(null);
+        p.setAvaliacao(null);
     }
 
     public void setPerguntas(List<Pergunta> perguntas) {
         this.perguntas = perguntas;
         if (perguntas != null) {
-            perguntas.forEach(p -> p.setQuestionario(this));
+            perguntas.forEach(p -> p.setAvaliacao(this));
         }
     }
 }
