@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
-import PerguntaDissertativa from '../../components/PerguntaDissertativa/PerguntaDissertativa';
-import PerguntaLikert from '../../components/PerguntaLikert/PerguntaLikert';
 import './Questionario.css'
 import { consultarPerguntas } from '../../service/perguntas';
+import PerguntaAlternativa from '../../components/PerguntaAlternativa/PerguntaAlternativa';
 
 export function Questionario() {
     const [perguntas, setPerguntas] = useState<any[]>([]);
@@ -16,29 +15,27 @@ export function Questionario() {
 
         obterDados();
     }, []);
-        
 
-    const handleSubmit = (formData: FormData) => {
-        const p = formData.get('pergunta-1');
-        alert("Resposta enviada: \n1 = " + p);
-    };
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        const data = new FormData(e.currentTarget as HTMLFormElement);
+        alert("Valor selecionado:"+data.get("pergunta-1"));
+    }; 
     
     return (
         <div>
-            <form action={handleSubmit}>
+            <form onSubmit={handleSubmit}>
+                <PerguntaAlternativa
+                    name="pergunta-1"
+                    pergunta="Qual seu super-herói favorito?"
+                    alternativas={[
+                    { id: "batman", texto: "Batman" },
+                    { id: "homem-aranha", texto: "Homem-Aranha" },
+                    { id: "mulher-maravilha", texto: "Mulher-Maravilha" },
+                    ]}
+                />
 
-                {
-                    perguntas.map((p, index) => {
-                        const name = `pergunta-${index}`;
-
-                        return p.tipo === 'likert' ?
-                            <PerguntaLikert key={index} name={name} question={p.pergunta} defaultValue='3'/>                     
-                                :
-                            <PerguntaDissertativa key={index} name={name} pergunta={p.pergunta} />
-                    })
-                }
-
-                <button type='submit'>Enviar resposta</button>
+                <button type="submit">Enviar</button>
             </form>
         </div>
     );  
