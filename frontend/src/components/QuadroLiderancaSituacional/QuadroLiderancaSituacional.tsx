@@ -13,9 +13,9 @@ type Quadrant = {
 const QUADRANTS: Quadrant[] = [
   {
     id: "q1",
-    title: "Baixa competência\nAlto comprometimento",
-    subtitle: "D1 — Entusiastic Beginner",
-    leaderStyle: "S1 — Direcionar (Directing)",
+    title: "Baixo preparo\nAlta atitude",
+    subtitle: "D1 — Incauto Motivado",
+    leaderStyle: "S1 — Comandante (\"Faça assim\")",
     description:
       "Aprendiz entusiasmado: precisa de instruções claras e supervisão próxima para aprender a tarefa.",
     color: "#ffe082",
@@ -23,9 +23,9 @@ const QUADRANTS: Quadrant[] = [
   },
   {
     id: "q2",
-    title: "Baixa competência\nBaixo comprometimento",
-    subtitle: "D2 — Desiludido/Aprendiz",
-    leaderStyle: "S2 — Orientar / Treinar (Coaching)",
+    title: "Baixo preparo\nBaixa atitude",
+    subtitle: "D2 — Limitado Frustrado",
+    leaderStyle: "S2 — Treinador (\"Vamos juntos\")",
     description:
       "Alguma experiência inicial, mas motivação baixa. Precisa de suporte, encorajamento e feedback.",
     color: "#ffccbc",
@@ -33,9 +33,9 @@ const QUADRANTS: Quadrant[] = [
   },
   {
     id: "q3",
-    title: "Alta competência\nBaixo comprometimento",
-    subtitle: "D3 — Capaz, mas inseguro",
-    leaderStyle: "S3 — Apoiar (Supporting)",
+    title: "Alto preparo\nBaixa atitude",
+    subtitle: "D3 — Capaz Inseguro",
+    leaderStyle: "S3 — Orientador (\"Pode ir que estou aqui\")",
     description:
       "Tem competência, mas falta confiança ou motivação consistente — líder oferece apoio e participação nas decisões.",
     color: "#bbdefb",
@@ -43,9 +43,9 @@ const QUADRANTS: Quadrant[] = [
   },
   {
     id: "q4",
-    title: "Alta competência\nAlto comprometimento",
-    subtitle: "D4 — Autônomo",
-    leaderStyle: "S4 — Delegar (Delegating)",
+    title: "Alto preparo\nAlta atitude",
+    subtitle: "D4 — Realizador Independente",
+    leaderStyle: "S4 — Desafiador (\"Vai sozinho\")",
     description:
       "Alto nível de habilidade e motivação — delegue responsabilidades com autonomia e monitore pontualmente.",
     color: "#c8e6c9",
@@ -60,7 +60,7 @@ export default function QuadroLiderancaSituacional() {
 
       <div className="sl-matrix" role="img" aria-label="Matriz de Liderança Situacional">
         <div className="sl-left-legend">
-          <div className="axis-vertical-label">Comprometimento ↑</div>
+          <div className="axis-vertical-label">Atitude ↑</div>
         </div>
 
         <div className="sl-grid">
@@ -120,7 +120,7 @@ export default function QuadroLiderancaSituacional() {
         </div>
 
         <div className="sl-bottom-legend">
-          <div className="axis-horizontal-label">Competência →</div>
+          <div className="axis-horizontal-label">Preparo →</div>
         </div>
       </div>
 
