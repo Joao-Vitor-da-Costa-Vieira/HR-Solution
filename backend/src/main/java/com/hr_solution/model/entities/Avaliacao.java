@@ -7,7 +7,10 @@ import lombok.Setter;
 
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+
+import com.hr_solution.model.enuns.LiderancaPergunta;
 
 @Entity
 @Table(name = "avaliacao")
@@ -39,6 +42,28 @@ public class Avaliacao {
     private String criadoPor;
 
     private OffsetDateTime criadoEm = OffsetDateTime.now();
+
+    private Date dataLimite;
+
+    private Integer quantidadePerguntas;
+
+    //Eixos do Perfil
+
+    //Máximo atingível no eixo da Atitude
+    private Integer EixoMaxAtitude;
+
+    private Integer EixoMaxCapacidade;
+
+    //Eixos da Liderança
+
+    //Máximo atingível no eixo da Liderança Comandante
+    private Integer LiderancaComandanteTotal;
+
+    private Integer LiderancaTreinadorTotal;
+    
+    private Integer LiderancaOrientadorTotal;
+
+    private Integer LiderancaDesafiadorTotal;
 
     @OneToMany(
         mappedBy = "avaliacao",

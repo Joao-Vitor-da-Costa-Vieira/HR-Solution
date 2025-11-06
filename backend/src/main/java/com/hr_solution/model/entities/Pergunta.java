@@ -31,11 +31,15 @@ public class Pergunta {
 
     private Integer ordem;
 
+    //Peso da pergunta na avaliação
+    private Integer pesoTotal;
+
     private Integer NumeroAlternativas;
 
     @Column(length = 800)
     private String AlternativaUm;
 
+    //Peso da alternativa na pergunta
     private Integer PesoUm;
 
     @Column(length = 800)
