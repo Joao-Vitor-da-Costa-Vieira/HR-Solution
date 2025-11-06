@@ -45,4 +45,21 @@ public class RespostaAvaliacao {
 
     @OneToMany(mappedBy = "respostaAvaliacao", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<RespostaPergunta> respostas;
+
+    public void adicionarResposta(RespostaPergunta r) {
+        respostas.add(p);
+        r.setRespostaAvaliacao(this);
+    }
+
+    public void removerResposta(RespostaPergunta r) {
+        respostas.remove(r);
+        r.setRespostaAvaliacao(null);
+    }
+
+    public void setRespostas(List<RespostaPergunta> respostas) {
+        this.respostas = respostas;
+        if (respostas != null) {
+            respostas.forEach(r -> r.setRespostaAvaliacao(this));
+        }
+    }
 }
