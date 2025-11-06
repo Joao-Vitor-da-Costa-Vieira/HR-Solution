@@ -7,7 +7,7 @@ export const Home = () => {
         <div>
             <Navegacao/>
 
-            <h1 id="titulo">Bem vindo a página principal</h1>
+            <h1 id="titulo">Teste de Liderança Situacional</h1>
 
             <p>Teste de Liderança Situacional e tals, e mais alguns dizeres.</p>
 

@@ -1,3 +1,10 @@
+:root {
+  --rosa-grafico: rgba(255, 200, 200, 0.5);
+  --azul-grafico: rgba(200, 200, 255, 0.5);
+  --verde-grafico: rgba(200, 255, 200, 0.5);
+  --amarelo-grafico: rgba(255, 255, 200, 0.5);
+}
+
 .grafico-cartesiano {
   background-color: white;
   border: 1px solid #ccc;
