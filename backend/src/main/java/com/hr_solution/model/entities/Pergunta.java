@@ -13,12 +13,6 @@ import lombok.Setter;
 @Setter
 public class Pergunta {
 
-    /**
-     * FIXME: poderão haver apenas perguntas alternativas, cada alternativa com um peso
-     * 
-     *
-     */ 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -29,8 +23,45 @@ public class Pergunta {
     @Enumerated(EnumType.STRING)
     private TipoPergunta tipo;
 
-    // se quiser, ordem das perguntas no questionário
+    @Enumerated(EnumType.STRING)
+    private EixoPergunta eixo;
+
+    @Enumerated(EnumType.STRING)
+    private LiderancaPergunta lideranca;
+
     private Integer ordem;
+
+    private Integer NumeroAlternativas;
+
+    @Column(length = 800)
+    private String AlternativaUm;
+
+    private Integer PesoUm;
+
+    @Column(length = 800)
+    private String AlternativaDois;
+
+    private Integer PesoDois;
+
+    @Column(length = 800)
+    private String AlternativaTres;
+
+    private Integer PesoTres;
+
+    @Column(length = 800)
+    private String AlternativaQuatro;
+    
+    private Integer PesoQuatro;
+
+    @Column(length = 800)
+    private String AlternativaCinco;
+
+    private Integer PesoCinco;
+
+    @Column(length = 800)
+    private String AlternativaSeis;
+
+    private Integer PesoSeis;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "avaliacao_id")
