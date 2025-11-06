@@ -1,5 +1,5 @@
-import type { Entidade } from "../../model/Entidade";
-import { atualizarEntidade, deletarEntidade } from "../../service/api";
+import type { Entidade } from "../../../model/Entidade";
+import { atualizarEntidade, deletarEntidade } from "../../../service/api";
 import "./TabelaEntities.css";
 
 type Props = {

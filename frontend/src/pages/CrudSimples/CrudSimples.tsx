@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { TabelaEntities } from "../../components/TabelaEntities/TabelaEntities";
+import { TabelaEntities } from "../../components/outros/TabelaEntities/TabelaEntities";
 import { useEffect, useState } from "react";
 import { adicionarEntidade, consultarTodasEntidades } from "../../service/api";
 import type { Entidade } from "../../model/Entidade";
