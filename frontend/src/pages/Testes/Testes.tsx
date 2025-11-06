@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from "react";
+import { Fragment, useState, type FormEvent } from "react";
 import PerguntaDissertativa from "../../components/perguntas/PerguntaDissertativa/PerguntaDissertativa";
 import PerguntaLikert from "../../components/perguntas/PerguntaLikert/PerguntaLikert";
 import { Navegacao } from "../../components/layout/Navegacao/Navegacao";
@@ -12,6 +12,20 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Item, ItemActions, ItemContent, ItemDescription, ItemGroup, ItemMedia, ItemTitle } from "@/components/ui/item";
+
+import {
+  Field,
+  FieldDescription,
+  FieldError,
+  FieldGroup,
+  FieldLabel,
+  FieldLegend,
+  FieldSet,
+} from "@/components/ui/field"
+
+import { Input } from "@/components/ui/input"
+import { Switch } from "@/components/ui/switch";
 
 export function Testes(){
     const [respostaDissertativa, setRespostaDissertativa] = useState("");
@@ -61,6 +75,51 @@ export function Testes(){
                     <SelectItem value="system">System</SelectItem>
                 </SelectContent>
             </Select>
+
+            <ItemGroup>
+                {
+                    [{ nome: "XYZ"}, {nome: "ABC"}].map((processo, index) => {
+                        return (
+                            <Fragment key={index}>
+                                <Item asChild>
+                                    <a href="/processoSeletivo">
+                                        <ItemMedia>
+                                            <img src="vite.svg"/>
+                                        </ItemMedia>
+                                        <ItemContent>
+                                            <ItemTitle>Processo Seletivo {processo.nome}</ItemTitle>
+                                            <ItemDescription>Processo incrível e etc.</ItemDescription>
+                                        </ItemContent>
+                                        <ItemActions />
+                                    </a>
+                                </Item>
+                            </Fragment>
+                        );
+                    })
+
+                }
+            </ItemGroup>
+
+            <FieldSet>
+                <FieldLegend>Profile</FieldLegend>
+                <FieldDescription>This appears on invoices and emails.</FieldDescription>
+                <FieldGroup>
+                    <Field>
+                    <FieldLabel htmlFor="name">Full name</FieldLabel>
+                    <Input id="name" autoComplete="off" placeholder="Evil Rabbit" />
+                    <FieldDescription>This appears on invoices and emails.</FieldDescription>
+                    </Field>
+                    <Field>
+                    <FieldLabel htmlFor="username">Username</FieldLabel>
+                    <Input id="username" autoComplete="off" aria-invalid />
+                    <FieldError>Choose another username.</FieldError>
+                    </Field>
+                    <Field orientation="horizontal">
+                    <Switch id="newsletter" />
+                    <FieldLabel htmlFor="newsletter">Subscribe to the newsletter</FieldLabel>
+                    </Field>
+                </FieldGroup>
+                </FieldSet>
 
             <h3>Chat Gemini</h3>
 
