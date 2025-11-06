@@ -3,7 +3,7 @@ import { TabelaEntities } from "../../components/TabelaEntities/TabelaEntities";
 import { useEffect, useState } from "react";
 import { adicionarEntidade, consultarTodasEntidades } from "../../service/api";
 import type { Entidade } from "../../model/Entidade";
-import { Navegacao } from "../../components/Navegacao/Navegacao";
+import { Navegacao } from "../../components/layout/Navegacao/Navegacao";
 
 export const CrudSimples = () => {
     const [entidades, setEntidades] = useState<Entidade[]>([]);

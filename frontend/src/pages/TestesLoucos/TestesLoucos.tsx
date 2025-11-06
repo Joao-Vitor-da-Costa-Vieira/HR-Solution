@@ -1,8 +1,8 @@
 import { useState, type FormEvent } from "react";
-import ChatGemini from "../../components/ChatGemini/ChatGemini";
-import PerguntaDissertativa from "../../components/PerguntaDissertativa/PerguntaDissertativa";
-import PerguntaLikert from "../../components/PerguntaLikert/PerguntaLikert";
-import { Navegacao } from "../../components/Navegacao/Navegacao";
+import PerguntaDissertativa from "../../components/perguntas/PerguntaDissertativa/PerguntaDissertativa";
+import PerguntaLikert from "../../components/perguntas/PerguntaLikert/PerguntaLikert";
+import { Navegacao } from "../../components/layout/Navegacao/Navegacao";
+import ChatGemini from "../../components/outros/ChatGemini/ChatGemini";
 
 export function TestesLoucos(){
     const [respostaDissertativa, setRespostaDissertativa] = useState("");

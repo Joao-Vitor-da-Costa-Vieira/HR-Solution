@@ -1,6 +1,6 @@
-import GraficoCartesiano from "../../components/GraficoCartesiano/GraficoCartesiano";
-import { Navegacao } from "../../components/Navegacao/Navegacao";
-import QuadroLiderancaSituacional from "../../components/QuadroLiderancaSituacional/QuadroLiderancaSituacional";
+import GraficoCartesiano from "../../components/charts/GraficoCartesiano/GraficoCartesiano";
+import { Navegacao } from "../../components/layout/Navegacao/Navegacao";
+import QuadroLiderancaSituacional from "../../components/charts/QuadroLiderancaSituacional/QuadroLiderancaSituacional";
 import "./Analise.css";
 
 export function Analise(){

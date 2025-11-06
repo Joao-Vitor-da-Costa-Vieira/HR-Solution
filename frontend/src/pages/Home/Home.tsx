@@ -1,5 +1,5 @@
 import "./Home.css"
-import { Navegacao } from "../../components/Navegacao/Navegacao";
+import { Navegacao } from "../../components/layout/Navegacao/Navegacao";
 import { Link } from "react-router-dom";
 
 export const Home = () => {

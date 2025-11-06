@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Navegacao } from "../../components/Navegacao/Navegacao"
+import { Navegacao } from "../../components/layout/Navegacao/Navegacao"
 import "./ProcessoSeletivo.css";
 
 export function ProcessoSeletivo(){

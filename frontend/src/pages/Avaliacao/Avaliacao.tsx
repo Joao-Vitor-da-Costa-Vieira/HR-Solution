@@ -1,5 +1,5 @@
 import './Avaliacao.css'
-import PerguntaAlternativa from '../../components/PerguntaAlternativa/PerguntaAlternativa';
+import PerguntaAlternativa from '../../components/perguntas/PerguntaAlternativa/PerguntaAlternativa';
 
 export function Avaliacao() {
 
