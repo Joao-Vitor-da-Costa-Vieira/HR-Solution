@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -18,8 +19,26 @@ public class RespostaAvaliacao {
 
     private String nomeCandidato;
     private String emailCandidato;
-    // TODO: data que o usuário fez
+    private Date dataAvaliacao;
     
+    //Eixos do Perfil
+
+    //Valor atingido nos eixos de Perfil
+    private Integer eixoAtitude;
+
+    private Integer eixoCapacidade;
+
+    //Eixos da Liderança
+
+    //Valor atingido nos eixos de Liderança
+    private Integer eixoLiderancaComandante;
+
+    private Integer eixoLiderancaTreinador;
+    
+    private Integer eixoLiderancaOrientador;
+
+    private Integer eixoLiderancaDesafiador;
+
     @ManyToOne
     @JoinColumn(name = "avaliacao_id")
     private Avaliacao avaliacao;
