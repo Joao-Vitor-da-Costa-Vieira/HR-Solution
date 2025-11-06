@@ -3,8 +3,17 @@ import PerguntaDissertativa from "../../components/perguntas/PerguntaDissertativ
 import PerguntaLikert from "../../components/perguntas/PerguntaLikert/PerguntaLikert";
 import { Navegacao } from "../../components/layout/Navegacao/Navegacao";
 import ChatGemini from "../../components/outros/ChatGemini/ChatGemini";
+import "./Testes.css";
 
-export function TestesLoucos(){
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+
+export function Testes(){
     const [respostaDissertativa, setRespostaDissertativa] = useState("");
     const [respostaLikert, setRespostaLikert] = useState("");
 
@@ -16,6 +25,8 @@ export function TestesLoucos(){
     return (
         <div>
             <Navegacao/>
+
+            <h3>Componentes de Pergunta</h3>
 
             <form onSubmit={handleSubmit}>
                 <PerguntaDissertativa
@@ -37,6 +48,21 @@ export function TestesLoucos(){
                     Enviar
                 </button>
             </form>
+
+            <h3>Componentes Shadcn</h3>
+
+            <Select>
+                <SelectTrigger className="w-[180px]">
+                    <SelectValue placeholder="Theme"/>
+                </SelectTrigger>
+                <SelectContent>
+                    <SelectItem value="light">Light</SelectItem>
+                    <SelectItem value="dark">Dark</SelectItem>
+                    <SelectItem value="system">System</SelectItem>
+                </SelectContent>
+            </Select>
+
+            <h3>Chat Gemini</h3>
 
             <ChatGemini/>
         </div>

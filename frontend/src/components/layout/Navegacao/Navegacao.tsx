@@ -12,8 +12,8 @@ export function Navegacao(){
                 • Crud Simples
             </Link>
 
-            <Link to={"/testesLoucos"}>
-                • Testes Loucos
+            <Link to={"/testes"}>
+                • Testes
             </Link>
         </nav>
     );
