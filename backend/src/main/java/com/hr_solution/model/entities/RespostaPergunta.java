@@ -25,6 +25,7 @@ public class RespostaPergunta {
     @JoinColumn(name = "pergunta_id")
     private Pergunta pergunta;
 
-    @Column(length = 1000)
-    private String resposta;
+    private Integer respostaEscolhida;
+
+    private Integer pesoObtido;
 }
