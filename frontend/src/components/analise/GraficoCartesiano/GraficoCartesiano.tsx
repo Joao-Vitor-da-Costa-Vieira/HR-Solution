@@ -16,10 +16,10 @@ export interface GraficoCartesianoProps {
 }
 
 const CORES = {
-    rosa: "rgba(255, 200, 200, 0.5)",
-    azul: "rgba(200, 200, 255, 0.5)",
-    verde: "rgba(200, 255, 200, 0.5)",
-    amarelo: "rgba(255, 255, 200, 0.5)",
+    rosa: "var(--rosa-grafico)",
+    azul: "var(--azul-grafico)",
+    verde: "var(--verde-grafico)",
+    amarelo: "var(--amarelo-grafico)",
 };
 
 export default function GraficoCartesiano({

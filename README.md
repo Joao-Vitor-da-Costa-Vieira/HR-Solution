@@ -50,6 +50,6 @@ npm run dev
 
 ### Referências
 
-npm create vite@latest frontend -- --template react-ts
 - [Guia Vite](https://pt.vite.dev/guide/)
 - [Spring initializr](https://start.spring.io)
+- [Shadcn](https://ui.shadcn.com/docs/components)

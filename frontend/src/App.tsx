@@ -5,7 +5,7 @@ import { Home } from './pages/Home/Home'
 import { CrudSimples } from './pages/CrudSimples/CrudSimples'
 import { Avaliacao } from './pages/Avaliacao/Avaliacao';
 import { Analise } from './pages/Analise/Analise';
-import { TestesLoucos } from './pages/TestesLoucos/TestesLoucos';
+import { Testes } from './pages/Testes/Testes';
 import { ProcessoSeletivo } from './pages/ProcessoSeletivo/ProcessoSeletivo';
 import { CriarAvaliacao } from './pages/CriarAvaliacao/CriarAvaliacao';
 
@@ -19,7 +19,7 @@ function App() {
         <Route path='/analise' element={<Analise />} />
         <Route path="/processoSeletivo" element={<ProcessoSeletivo/>} />
         
-        <Route path="/testesLoucos" element={<TestesLoucos/>} />
+        <Route path="/testes" element={<Testes/>} />
         <Route path="/crudSimples" element={<CrudSimples />} />
       </Routes>
     </Router>

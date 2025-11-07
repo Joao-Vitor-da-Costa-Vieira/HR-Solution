@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./ChatGemini.css";
-import { enviarPrompt } from "../../service/geminiApi";
+import { enviarPrompt } from "../../../service/geminiApi";
 
 interface Mensagem {
   remetente: "user" | "bot";

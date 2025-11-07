@@ -1,4 +1,4 @@
-import type { Entidade } from "../model/Entidade";
+import type { Entidade } from "../model/entities/Entidade";
 
 const PATH = "http://localhost:8080/entidadeteste";
 

@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
-import { TabelaEntities } from "../../components/TabelaEntities/TabelaEntities";
+import { TabelaEntities } from "../../components/outros/TabelaEntities/TabelaEntities";
 import { useEffect, useState } from "react";
 import { adicionarEntidade, consultarTodasEntidades } from "../../service/api";
-import type { Entidade } from "../../model/Entidade";
-import { Navegacao } from "../../components/Navegacao/Navegacao";
+import type { Entidade } from "../../model/entities/Entidade";
+import { Navegacao } from "../../components/layout/Navegacao/Navegacao";
+import { Button } from "@/components/ui/button";
 
 export const CrudSimples = () => {
     const [entidades, setEntidades] = useState<Entidade[]>([]);
@@ -58,14 +59,14 @@ export const CrudSimples = () => {
                 setEntidades={setEntidades}
             />
 
-            <button onClick={confirmarAdicaoEntidade}>
+            <Button onClick={confirmarAdicaoEntidade}>
                 Adicionar nova entidade
-            </button>
+            </Button>
         
             <Link to={"/"}>
-                <button style={{backgroundColor: 'white', color: 'black'}}>
+                <Button>
                     Voltar
-                </button>
+                </Button>
             </Link>
         </div>
     );
