@@ -1,6 +1,8 @@
 package com.hr_solution.model.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.hr_solution.model.enuns.EixoPergunta;
+import com.hr_solution.model.enuns.LiderancaPergunta;
 import com.hr_solution.model.enuns.TipoPergunta;
 
 import jakarta.persistence.*;
@@ -73,7 +75,7 @@ public class Pergunta {
     @Column(length = 800, nullable = true)
     private String AlternativaSeis;
 
-    @column(nullable = true)
+    @Column(nullable = true)
     private Integer PesoSeis;
 
     @ManyToOne(fetch = FetchType.LAZY)

@@ -5,14 +5,3 @@ public enum TipoPergunta {
     LIDERANCA
 }
 
-public enum EixoPergunta {
-    ATITUDE,
-    CAPACIDADE
-}
-
-public enum LiderancaPergunta {
-    COMANDANTE,
-    TREINADOR,
-    ORIENTADOR,
-    DESAFIADOR
-}
