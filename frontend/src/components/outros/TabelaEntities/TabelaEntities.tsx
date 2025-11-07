@@ -1,4 +1,4 @@
-import type { Entidade } from "../../../model/Entidade";
+import type { Entidade } from "../../../model/entities/Entidade";
 import { atualizarEntidade, deletarEntidade } from "../../../service/api";
 import "./TabelaEntities.css";
 
