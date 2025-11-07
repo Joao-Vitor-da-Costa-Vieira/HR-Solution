@@ -6,19 +6,19 @@ import type { Avaliacao } from "./Avaliacao";
 export interface Pergunta {
   id?: number;
   enunciado: string;
-  tipo?: TipoPergunta;
+  tipo: TipoPergunta;
   eixo?: EixoPergunta;
   lideranca?: LiderancaPergunta;
   ordem?: number;
 
-  pesoTotal?: number;
-  numeroAlternativas?: number;
+  pesoTotal: number;
+  numeroAlternativas: number;
 
-  alternativaUm?: string;
-  pesoUm?: number;
+  alternativaUm: string;
+  pesoUm: number;
 
-  alternativaDois?: string;
-  pesoDois?: number;
+  alternativaDois: string;
+  pesoDois: number;
 
   alternativaTres?: string;
   pesoTres?: number;
