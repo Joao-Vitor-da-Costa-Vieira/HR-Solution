@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -17,37 +18,37 @@ public class RespostaAvaliacao {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @column(nullable = false, length = 200)
+    @Column(nullable = false, length = 200)
     private String nomeCandidato;
 
-    @column(nullable = false, length = 200)
+    @Column(nullable = false, length = 200)
     private String emailCandidato;
 
-    @column(nullable = false)
+    @Column(nullable = false)
     private LocalDate dataAvaliacao;
     
     //Eixos do Perfil
 
     //Valor atingido nos eixos de Perfil
-    @column(nullable = true)
+    @Column(nullable = true)
     private Integer eixoAtitude;
 
-    @column(nullable = true)
+    @Column(nullable = true)
     private Integer eixoCapacidade;
 
     //Eixos da Liderança
 
     //Valor atingido nos eixos de Liderança
-    @column(nullable = true)
+    @Column(nullable = true)
     private Integer eixoLiderancaComandante;
 
-    @column(nullable = true)
+    @Column(nullable = true)
     private Integer eixoLiderancaTreinador;
     
-    @column(nullable = true)
+    @Column(nullable = true)
     private Integer eixoLiderancaOrientador;
 
-    @column(nullable = true)
+    @Column(nullable = true)
     private Integer eixoLiderancaDesafiador;
 
     @ManyToOne
@@ -58,7 +59,7 @@ public class RespostaAvaliacao {
     private List<RespostaPergunta> respostas;
 
     public void adicionarResposta(RespostaPergunta r) {
-        respostas.add(p);
+        respostas.add(r);
         r.setRespostaAvaliacao(this);
     }
 

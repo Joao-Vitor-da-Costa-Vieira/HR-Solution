@@ -1,6 +1,5 @@
 package com.hr_solution.model.entities;
 
-package com.hr_solution.model.entities;
 
 import jakarta.persistence.*;
 import lombok.Getter;
