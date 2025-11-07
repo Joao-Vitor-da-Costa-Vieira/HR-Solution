@@ -11,9 +11,10 @@ import {
 } from "@/components/ui/item";
 
 import { Fragment } from "react/jsx-runtime";
+import { useState } from "react";
 
 export function SelecaoProcessos(){
-    const processos = [{nome: "ABC"}, {nome: "XYZ"}]
+    const [processos, setProcessos] = useState([{nome: "ABC"}, {nome: "XYZ"}]);
 
     return (
         <ItemGroup>
