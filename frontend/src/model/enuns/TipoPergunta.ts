@@ -1,5 +1,5 @@
 export const TipoPergunta = {
-  OBJETIVA: "OBJETIVA",
-  DISCURSIVA: "DISCURSIVA",
+  OBJETIVA: "PERFIL",
+  DISCURSIVA: "LIDERANCA",
 } as const;
 export type TipoPergunta = typeof TipoPergunta[keyof typeof TipoPergunta];
