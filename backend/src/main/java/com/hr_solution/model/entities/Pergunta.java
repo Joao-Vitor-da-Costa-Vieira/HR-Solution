@@ -29,8 +29,6 @@ public class Pergunta {
     @Enumerated(EnumType.STRING)
     private LiderancaPergunta lideranca;
 
-    private Integer ordem;
-
     //Peso da pergunta na avaliação
     private Integer pesoTotal;
 
