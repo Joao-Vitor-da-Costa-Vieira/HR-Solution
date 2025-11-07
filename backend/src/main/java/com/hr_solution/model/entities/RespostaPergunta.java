@@ -2,7 +2,13 @@ package com.hr_solution.model.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,6 +22,12 @@ public class RespostaPergunta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @column(nullable = false)
+    private Integer respostaEscolhida;
+
+    @column(nullable = false)
+    private Integer pesoObtido;
+
     @ManyToOne
     @JoinColumn(name = "resposta_avaliacao_id")
     @JsonIgnore
@@ -25,6 +37,5 @@ public class RespostaPergunta {
     @JoinColumn(name = "pergunta_id")
     private Pergunta pergunta;
 
-    @Column(length = 1000)
-    private String resposta;
+
 }
