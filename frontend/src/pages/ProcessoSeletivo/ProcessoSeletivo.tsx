@@ -9,11 +9,15 @@ export function ProcessoSeletivo(){
 
             <h2>Processo Seletivo XYZ, criado para a vaga tal</h2>
 
-            <Link to={"/avaliacao"}>Link avaliação</Link>
+            <p>Data limite: 26/08/20XX</p>
+
+            <hr/>
+
+            <Link to={"/avaliacao"} style={{color: "red"}}>Link avaliação</Link>
 
             <div style={{backgroundColor: 'white'}}>
                 <p style={{color: 'black'}}>Candidato Jorge</p>
-                <Link to={"/analise"}>Visualizar</Link>
+                <Link to={"/analise"} style={{color: "red"}}>Visualizar</Link>
             </div>
 
             <div style={{backgroundColor: 'white'}}>

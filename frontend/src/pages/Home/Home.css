@@ -1,3 +1,15 @@
 #titulo {
     color: lightgreen;
 }
+
+main {
+    display: flex;
+}
+
+#selecao-processos {
+    width: 60%;
+}
+
+#adicionar-novo-processo {
+    width: 20%;
+}

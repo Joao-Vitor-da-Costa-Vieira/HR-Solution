@@ -1,6 +1,8 @@
 import "./Home.css"
 import { Navegacao } from "../../components/layout/Navegacao/Navegacao";
 import { Link } from "react-router-dom";
+import { SelecaoProcessos } from "@/components/processosSeletivos/SelecaoProcessos/SelecaoProcessos";
+import { Button } from "@/components/ui/button";
 
 export const Home = () => {
     return (
@@ -11,20 +13,19 @@ export const Home = () => {
 
             <p>Teste de Liderança Situacional e tals, e mais alguns dizeres.</p>
 
-            <Link to={"/criarAvaliacao"}>
-                Criar Avaliação
-            </Link>
+            <main>
+                <section id="selecao-processos">
+                    <SelecaoProcessos/>
+                </section>
 
-            <div style={{backgroundColor: 'white'}}>
-                <p style={{color: 'black'}}>Processo 1</p>
-                <Link to={"/processoSeletivo"}>Visualizar</Link>
-            </div>
+                <section id="adicionar-novo-processo">
+                    <Link to={"/criarAvaliacao"}>
+                        <Button variant="outline">Criar novo processo</Button>
+                    </Link>
+                </section>
+            </main>
 
-            <div style={{backgroundColor: 'white'}}>
-                <p style={{color: 'black'}}>Processo 2</p>
-                
-                <p style={{color: 'black'}}>Visualizar</p>
-            </div>
+            
         </div>
     );
 }
