@@ -1,6 +1,6 @@
-import type { EixoPergunta } from "../types/EixoPergunta";
-import type { LiderancaPergunta } from "../types/LiderancaPergunta";
-import type { TipoPergunta } from "../types/TipoPergunta";
+import type { EixoPergunta } from "../enuns/EixoPergunta";
+import type { LiderancaPergunta } from "../enuns/LiderancaPergunta";
+import type { TipoPergunta } from "../enuns/TipoPergunta";
 import type { Avaliacao } from "./Avaliacao";
 
 export interface Pergunta {
