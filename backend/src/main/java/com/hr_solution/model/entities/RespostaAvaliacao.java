@@ -19,7 +19,7 @@ public class RespostaAvaliacao {
 
     private String nomeCandidato;
     private String emailCandidato;
-    private Date dataAvaliacao;
+    private LocalDate dataAvaliacao;
     
     //Eixos do Perfil
 

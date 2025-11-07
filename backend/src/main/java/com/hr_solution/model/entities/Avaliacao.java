@@ -5,7 +5,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -41,9 +40,9 @@ public class Avaliacao {
 
     private String criadoPor;
 
-    private OffsetDateTime criadoEm = OffsetDateTime.now();
+    private LocalDate criadoEm = LocalDate.now();
 
-    private Date dataLimite;
+    private LocalDate dataLimite;
 
     private Integer quantidadePerguntas;
 
