@@ -17,26 +17,37 @@ public class RespostaAvaliacao {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @column(nullable = false, length = 200)
     private String nomeCandidato;
+
+    @column(nullable = false, length = 200)
     private String emailCandidato;
+
+    @column(nullable = false)
     private LocalDate dataAvaliacao;
     
     //Eixos do Perfil
 
     //Valor atingido nos eixos de Perfil
+    @column(nullable = true)
     private Integer eixoAtitude;
 
+    @column(nullable = true)
     private Integer eixoCapacidade;
 
     //Eixos da Liderança
 
     //Valor atingido nos eixos de Liderança
+    @column(nullable = true)
     private Integer eixoLiderancaComandante;
 
+    @column(nullable = true)
     private Integer eixoLiderancaTreinador;
     
+    @column(nullable = true)
     private Integer eixoLiderancaOrientador;
 
+    @column(nullable = true)
     private Integer eixoLiderancaDesafiador;
 
     @ManyToOne

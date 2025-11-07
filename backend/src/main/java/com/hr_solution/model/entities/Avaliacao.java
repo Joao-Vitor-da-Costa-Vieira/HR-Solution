@@ -33,35 +33,47 @@ public class Avaliacao {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(nullable = false)
     private String titulo;
 
-    @Column(length = 2000)
+    @Column(length = 2000, nullable = false)
     private String descricao;
 
+    @Column(nullable = false)
     private String criadoPor;
 
+    @Column(nullable = false)
     private LocalDate criadoEm = LocalDate.now();
 
+    @Column(nullable = false)
     private LocalDate dataLimite;
 
+    @Column(nullable = false)
     private Integer quantidadePerguntas;
 
     //Eixos do Perfil
 
     //Máximo atingível no eixo da Atitude
+    @Column(nullable = true)
     private Integer EixoMaxAtitude;
 
+    @Column(nullable = true)
     private Integer EixoMaxCapacidade;
 
     //Eixos da Liderança
 
     //Máximo atingível no eixo da Liderança Comandante
+    @Column(nullable = true)
     private Integer LiderancaComandanteTotal;
 
+    @Column(nullable = true)
     private Integer LiderancaTreinadorTotal;
     
+    @Column(nullable = true)
     private Integer LiderancaOrientadorTotal;
 
+    @Column(nullable = true)
     private Integer LiderancaDesafiadorTotal;
 
     @OneToMany(

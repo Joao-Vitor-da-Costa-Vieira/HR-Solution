@@ -22,8 +22,10 @@ public class RespostaPergunta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @column(nullable = false)
     private Integer respostaEscolhida;
 
+    @column(nullable = false)
     private Integer pesoObtido;
 
     @ManyToOne
