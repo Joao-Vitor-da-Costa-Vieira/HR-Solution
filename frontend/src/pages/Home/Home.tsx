@@ -1,8 +1,5 @@
 import "./Home.css"
 import { Navegacao } from "../../components/layout/Navegacao/Navegacao";
-import { Link } from "react-router-dom";
-import { SelecaoProcessos } from "@/components/processosSeletivos/SelecaoProcessos/SelecaoProcessos";
-import { Button } from "@/components/ui/button";
 import  ObjectListForm  from "@/pages/Home/ObjectListForm"; 
 
 
