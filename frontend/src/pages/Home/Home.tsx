@@ -3,29 +3,34 @@ import { Navegacao } from "../../components/layout/Navegacao/Navegacao";
 import { Link } from "react-router-dom";
 import { SelecaoProcessos } from "@/components/processosSeletivos/SelecaoProcessos/SelecaoProcessos";
 import { Button } from "@/components/ui/button";
+import  ObjectListForm  from "@/pages/Home/ObjectListForm"; 
+
 
 export const Home = () => {
     return (
         <div>
-            <Navegacao/>
+            <Navegacao />
 
             <h1 id="titulo">Teste de Liderança Situacional</h1>
 
-            <p>Teste de Liderança Situacional e tals, e mais alguns dizeres.</p>
+            <div id="menu">
+                <div id="container">
+                    
 
-            <main>
-                <section id="selecao-processos">
-                    <SelecaoProcessos/>
-                </section>
-
-                <section id="adicionar-novo-processo">
-                    <Link to={"/criarAvaliacao"}>
-                        <Button variant="outline">Criar novo processo</Button>
-                    </Link>
-                </section>
-            </main>
-
-            
+                    <div id="menu-ps">
+                        <ObjectListForm/>
+                    </div>
+                    
+                </div>
+                
+            </div>
         </div>
+
+       
+        
+
+
+
+        
     );
 }
