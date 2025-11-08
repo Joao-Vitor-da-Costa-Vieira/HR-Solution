@@ -9,7 +9,7 @@ body, html {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 60px;
+  height: 64px;
   background-color: #0E2369;
   border-bottom: 3px solid #467FF7;
   display: flex;
@@ -49,7 +49,7 @@ body, html {
 }
 
 main, .conteudo {
-  padding-top: 60px;
+  padding-top: 64px;
 }
 
 
