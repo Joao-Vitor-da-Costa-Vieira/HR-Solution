@@ -12,28 +12,28 @@ const QUADRANTS: Quadrant[] = [
     id: "q1",
     title: "S1 — Comandante",
     description:
-      "Diante de uma liderança muito diretiva, o colaborador tende a se sentir subestimado. Embora execute as tarefas corretamente, pode demonstrar resistência ou desmotivação por não ter espaço para opinar.",
+      "Diante de uma liderança muito diretiva, o colaborador tende a se sentir subestimado. Embora execute as tarefas corretamente, tende demonstrar resistência ou desmotivação por não ter espaço para opinar.",
     color: "#ffe082",
   },
   {
     id: "q2",
     title: "S2 — Treinador",
     description:
-      "Com uma liderança mais próxima e encorajadora, o colaborador reage bem inicialmente, pois recebe orientação e suporte. No entanto, pode sentir-se controlado se o acompanhamento for excessivo.",
+      "Com uma liderança mais próxima e encorajadora, o colaborador reage bem ao apoio. No entanto, pode variar em relação ao controle exercido sobre ele dependendo da situação.",
     color: "#ffccbc",
   },
   {
     id: "q3",
     title: "S3 — Orientador",
     description:
-      "Nesse estilo, o colaborador sente-se valorizado e confiante. A abertura para diálogo e a troca constante de feedback fortalecem sua motivação e aumentam sua autonomia.",
+      "Nesse estilo, o colaborador demonstra o melhor desempenho, mostrando uma boa reação ao apoio e a abertura para diálogo e a troca constante de feedback fortalecem sua motivação e aumentam sua autonomia.",
     color: "#bbdefb",
   },
   {
     id: "q4",
     title: "S4 — Desafiador",
     description:
-      "Quando o líder delega total responsabilidade, o colaborador tende a hesitar. Apesar de ter competência técnica, pode sentir insegurança pela falta de acompanhamento ou reconhecimento.",
+      "Quando o líder delega total responsabilidade, o colaborador tende a hesitar. Apesar de ter competência técnica, sua insegurança em relação aos processos internos do local de trabalho desaceleram seu desempenho.",
     color: "#c8e6c9",
   },
 ];

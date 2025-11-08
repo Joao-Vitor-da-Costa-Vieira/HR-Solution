@@ -6,6 +6,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Separator } from "@/components/ui/separator";
 import { toast } from "sonner";
 import "./ProcessoSeletivo.css";
+import { Eye } from "lucide-react";
 
 export function ProcessoSeletivo() {
   //const { id } = useParams(); //identificar o processo na URL futuramente
@@ -13,13 +14,13 @@ export function ProcessoSeletivo() {
     nome: "Processo Seletivo XYZ",
     vaga: "Analista de Sistemas",
     dataLimite: "26/08/2026",
-    linkAvaliacao: "https://seusite.com/avaliacao/xyz",
+    linkAvaliacao: "/avaliacao",
   });
 
   const [avaliacoes] = useState([
-    { id: 1, nome: "Jorge", link: "/analise/jorge" },
-    { id: 2, nome: "Borges", link: "/analise/borges" },
-    { id: 3, nome: "Ulysses", link: "/analise/ulysses" },
+    { id: 1, nome: "Jorge", link: "/analise" },
+    { id: 2, nome: "Borges", link: "/analise" },
+    { id: 3, nome: "Ulysses", link: "/analise" },
   ]);
 
   const handleShare = () => {
@@ -45,6 +46,10 @@ export function ProcessoSeletivo() {
             <div className="flex items-center gap-3 mt-4">
 
               <Button onClick={handleShare}>📋 Copiar Link</Button>
+
+              <Link to="/avaliacao">
+                <Button onClick={handleShare}><Eye/>Abrir avaliação</Button>
+              </Link>
             </div>
           </CardContent>
         </Card>

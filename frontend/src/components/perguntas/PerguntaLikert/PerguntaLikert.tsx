@@ -1,110 +1,101 @@
-import React from "react";
+import { useState, useEffect, type KeyboardEvent } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Label } from "@/components/ui/label";
+import { cn } from "@/lib/utils";
 
-type Option = {
-  value: string;   // valor retornado (ex: "5", "4", ...)
-  label: string;   // texto exibido (ex: "Concordo totalmente")
-};
-
-type Props = {
+interface PerguntaLikertProps {
+  enunciado: string;
+  estiloLideranca?: string;
+  desativado?: boolean;
+  onResponder?: (valor: number) => void;
   name: string;
-  question: string;
-  value?: string; // controlled
-  defaultValue?: string; // uncontrolled initial
-  onChange?: (value: string) => void;
-  options?: Option[]; // padrão 5 pontos clássico
-  orientation?: "horizontal" | "vertical";
-  required?: boolean;
-  className?: string;
-};
+}
 
-export const PerguntaLikert: React.FC<Props> = ({
+const ESCALA_LIKERT = [
+  { valor: 1, texto: "Discordo totalmente" },
+  { valor: 2, texto: "Discordo" },
+  { valor: 3, texto: "Neutro" },
+  { valor: 4, texto: "Concordo" },
+  { valor: 5, texto: "Concordo totalmente" },
+];
+
+export default function PerguntaLikert({
+  enunciado,
+  estiloLideranca,
+  desativado = false,
+  onResponder = () => {},
   name,
-  question,
-  value,
-  defaultValue,
-  onChange,
-  options,
-  orientation = "horizontal",
-  required = false,
-  className,
-}) => {
-  const defaultOptions: Option[] = [
-    { value: "5", label: "Concordo totalmente" },
-    { value: "4", label: "Concordo parcialmente" },
-    { value: "3", label: "Nem concordo nem discordo" },
-    { value: "2", label: "Discordo parcialmente" },
-    { value: "1", label: "Discordo totalmente" },
-  ];
+}: PerguntaLikertProps) {
+  const [selecionado, setSelecionado] = useState<number | null>(null);
 
-  const opts = options ?? defaultOptions;
+  useEffect(() => {
+    setSelecionado(null);
+  }, [enunciado]);
 
-  // controlado vs não-controlado: se value definido, componente é controlado
-  const [internal, setInternal] = React.useState<string | undefined>(defaultValue);
+  const selecionar = (valor: number) => {
+    if (desativado) return;
+    setSelecionado(valor);
+    onResponder(valor);
+  };
 
-  React.useEffect(() => {
-    if (value !== undefined) return;
-    setInternal(defaultValue);
-  }, [defaultValue, value]);
-
-  const selected = value !== undefined ? value : internal;
-
-  const handleChange = (v: string) => {
-    if (value === undefined) setInternal(v);
-    onChange?.(v);
+  const teclaHandler = (e: KeyboardEvent<HTMLDivElement>, valor: number) => {
+    if (e.key === " " || e.key === "Enter") {
+      e.preventDefault();
+      selecionar(valor);
+    }
   };
 
   return (
-    <fieldset
-      className={className}
-      style={{
-        border: "none",
-        padding: 0,
-        margin: 0,
-      }}
-    >
-      <legend style={{ fontWeight: 600, marginBottom: 8 }}>{question}{required ? " *" : ""}</legend>
+    <Card className="w-full p-4 shadow-md border rounded-2xl">
+      <CardContent>
+        <div className="mb-2">
+          <h3 className="text-lg font-semibold leading-snug">{enunciado}</h3>
+          {estiloLideranca && (
+            <p className="text-sm text-muted-foreground italic">
+              
+            </p>
+          )}
+        </div>
 
-      <div
-        role="radiogroup"
-        aria-label={question}
-        style={{
-          display: orientation === "horizontal" ? "flex" : "block",
-          gap: 12,
-          alignItems: "center",
-        }}
-      >
-        {opts.map((opt) => {
-          const id = `${name}-${opt.value}`;
-          return (
-            <label
-              key={opt.value}
-              htmlFor={id}
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                cursor: "pointer",
-                minWidth: orientation === "horizontal" ? 120 : undefined,
-                padding: 6,
-              }}
-            >
-              <input
-                id={id}
-                name={name}
-                type="radio"
-                value={opt.value}
-                checked={selected === opt.value}
-                onChange={() => handleChange(opt.value)}
-                style={{ marginBottom: 6 }}
-                required={required && opts[0].value === opt.value} // required only once in group
-              />
-              <span style={{ fontSize: 13, textAlign: "center" }}>{opt.label}</span>
-            </label>
-          );
-        })}
-      </div>
-    </fieldset>
+        <div className="grid grid-cols-5 gap-2 mt-4 text-center">
+          {ESCALA_LIKERT.map((opcao) => {
+            const ativo = selecionado === opcao.valor;
+            return (
+              <div
+                key={opcao.valor}
+                role="radio"
+                aria-checked={ativo}
+                tabIndex={desativado ? -1 : 0}
+                onKeyDown={(e) => teclaHandler(e, opcao.valor)}
+                onClick={() => selecionar(opcao.valor)}
+                className={cn(
+                  "flex flex-col items-center justify-center border rounded-xl p-2 cursor-pointer transition-all select-none",
+                  ativo
+                    ? "bg-primary text-primary-foreground shadow-sm scale-[1.02]"
+                    : "hover:bg-muted",
+                  desativado && "opacity-50 cursor-not-allowed"
+                )}
+              >
+                <Label
+                  htmlFor={`${name}-${opcao.valor}`}
+                  className="text-xs sm:text-sm cursor-pointer"
+                >
+                  {opcao.texto}
+                </Label>
+
+                <div
+                  className={cn(
+                    "mt-2 w-5 h-5 rounded-full border-2 flex items-center justify-center",
+                    ativo ? "border-primary bg-primary" : "border-muted"
+                  )}
+                >
+                  {ativo && <div className="w-2.5 h-2.5 bg-white rounded-full" />}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </CardContent>
+    </Card>
   );
-};
-
-export default PerguntaLikert;
+}

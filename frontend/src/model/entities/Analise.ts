@@ -1,4 +1,4 @@
-import type { Quadrante } from "../enuns/Quadrante";
+import { Quadrante } from "../enuns/Quadrante";
 import type { RespostaAvaliacao } from "./RespostaAvaliacao";
 
 export interface Analise {
@@ -7,7 +7,7 @@ export interface Analise {
   quadrante: Quadrante;
 
   //Máximos
-  eixoMaxAtitude?: number;
+  eixoMaxAtitude?: number; //
   eixoMaxCapacidade?: number;
   eixoMaxDesempenho?: number;
 

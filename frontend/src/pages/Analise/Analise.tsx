@@ -2,32 +2,34 @@ import { useState } from "react";
 import { Navegacao } from "../../components/layout/Navegacao/Navegacao";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
 import "./Analise.css";
+import { GraficoBarras } from "@/components/analise/GraficoBarras/GraficoBarras";
+import { consultarAnalisePorID } from "@/service/mock/analiseApi";
+import GraficoCartesiano from "@/components/analise/GraficoCartesiano/GraficoCartesiano";
+import QuadroLiderancaSituacional from "@/components/analise/QuadroLiderancaSituacional/QuadroLiderancaSituacional";
+import { Sparkle } from "lucide-react";
 
 export function Analise() {
   const [loading, setLoading] = useState(false);
-  const [respostaIA, setRespostaIA] = useState<string | null>(null);
+  const [respostaIA, setRespostaIA] = useState<string | null>(
+    `O participante demonstra um perfil predominantemente do Q3, com alta capacidade. Porém ele tende a variar de atitude quando confrontado com diferentes situações e perfis de liderança diferentes, especificamente em situações relacionados a processos internos da empresa. Recomenda-se investir no desenvolvimento de habilidades de tomada de decisão
+em contextos referentes aos processos de fluxo de trabalho praticados por ele.`
+  );
 
-  const dadosGerais = [
-    { name: "Comunicação", score: 8 },
-    { name: "Liderança", score: 7 },
-    { name: "Flexibilidade", score: 6 },
-    { name: "Trabalho em equipe", score: 9 },
-    { name: "Gestão de conflitos", score: 7 },
+  const analise = consultarAnalisePorID(1);
+
+  const dadosCaracteristicas = [
+    { name: "Atitude", score: analise.eixoAtitude },
+    { name: "Preparo", score: analise.eixoCapacidade },
+    { name: "Desempenho", score: analise.eixoDesempenho },
   ];
 
-  async function gerarAnalise() {
-    setLoading(true);
-    // Exemplo de chamada fictícia à IA
-    setTimeout(() => {
-      setRespostaIA(`Com base nos princípios da Teoria da Liderança Situacional, o participante demonstra
-um perfil predominantemente colaborativo e adaptativo, com alta capacidade de trabalho em equipe
-e boa comunicação. Recomenda-se investir no desenvolvimento de habilidades de tomada de decisão
-em contextos de alta pressão e liderança diretiva.`);
-      setLoading(false);
-    }, 1500);
-  }
+  const dadosLideranca = [
+    { name: "Comandante", score: analise.eixoLiderancaComandante },
+    { name: "Treinador", score: analise.eixoLiderancaTreinador },
+    { name: "Orientador", score: analise.eixoLiderancaOrientador },
+    { name: "Desafiador", score: analise.eixoLiderancaDesafiador },
+  ];
 
   return (
     <div className="analise-container">
@@ -50,21 +52,35 @@ em contextos de alta pressão e liderança diretiva.`);
         </section>
 
         <section className="grafico-card">
+          <GraficoBarras
+            dados={dadosCaracteristicas}
+            nome={"Características"}
+            color={"#467FF7"}
+          />
+        </section>
+
+        <section className="info-card">
           <Card>
             <CardHeader>
-              <CardTitle>Desempenho nas Competências</CardTitle>
+              <CardTitle>Alinhamento com Lideranças</CardTitle>
             </CardHeader>
-            <CardContent style={{ width: "100%", height: 300 }}>
-              <ResponsiveContainer>
-                <BarChart data={dadosGerais}>
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="name" />
-                  <YAxis domain={[0, 10]} />
-                  <Tooltip />
-                  <Legend />
-                  <Bar dataKey="score" fill="#467FF7" name="Pontuação" />
-                </BarChart>
-              </ResponsiveContainer>
+            <CardContent className="flex flex-col items-center justify-center gap-6 text-center">
+              <QuadroLiderancaSituacional/>
+            </CardContent>
+          </Card>
+        </section>
+
+        <section className="info-card">
+          <Card>
+            <CardHeader>
+              <CardTitle>Posição em Relação à Liderança</CardTitle>
+            </CardHeader>
+            <CardContent className="flex flex-col items-center justify-center gap-6 text-center">
+              <GraficoCartesiano
+                pontos={[{x: analise.eixoCapacidade, y: analise.eixoAtitude}]}
+                espessuraPonto={30}
+                corPonto="#dd5d5dff"
+              />
             </CardContent>
           </Card>
         </section>
@@ -72,24 +88,24 @@ em contextos de alta pressão e liderança diretiva.`);
         <section className="ia-card">
           <Card>
             <CardHeader>
-              <CardTitle>Análise por Inteligência Artificial</CardTitle>
+              <CardTitle>Resultado Final - {analise.quadrante}</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="descricao-ia">
-                Esta seção fornece uma análise automática das respostas com base na Teoria da Liderança Situacional,
-                destacando pontos fortes, oportunidades de desenvolvimento e recomendações para o RH.
-              </p>
 
-              <Button onClick={gerarAnalise} disabled={loading}>
-                {loading ? "Gerando análise..." : "Gerar análise da IA"}
-              </Button>
+              <Card>
+                <CardHeader>
+                  <CardTitle>Resumo da Inteligência Artificial</CardTitle>
+                </CardHeader>
 
-              {respostaIA && (
-                <div className="resposta-ia">
-                  <h4>Resultado:</h4>
-                  <p>{respostaIA}</p>
-                </div>
-              )}
+                <CardContent>
+                  
+                  {respostaIA && (
+                    <div className="resposta-ia">
+                      <p>{respostaIA}</p>
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
             </CardContent>
           </Card>
         </section>

@@ -9,5 +9,5 @@ export type Alternativa = {
   pesoDesempenho?: number;
   tipoLideranca?: TipoLideranca;
   
-  avaliacao: Avaliacao;
+  avaliacao?: Avaliacao;
 }
