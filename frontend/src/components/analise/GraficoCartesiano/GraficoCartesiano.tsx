@@ -16,10 +16,10 @@ export interface GraficoCartesianoProps {
 }
 
 const CORES = {
-    rosa: "var(--rosa-grafico)",
-    azul: "var(--azul-grafico)",
-    verde: "var(--verde-grafico)",
-    amarelo: "var(--amarelo-grafico)",
+  rosa: "var(--rosa-grafico)",
+  azul: "var(--azul-grafico)",
+  verde: "var(--verde-grafico)",
+  amarelo: "var(--amarelo-grafico)",
 };
 
 export default function GraficoCartesiano({
@@ -111,6 +111,30 @@ export default function GraficoCartesiano({
             />
           );
         })}
+
+        {/* Labels dos eixos */}
+        <text
+          x={largura / 2}
+          y={altura - 4}
+          textAnchor="middle"
+          fontSize="14"
+          fill="#333"
+          fontWeight="500"
+        >
+          Comportamento Diretivo →
+        </text>
+
+        <text
+          x={12}
+          y={altura / 2}
+          textAnchor="middle"
+          fontSize="14"
+          fill="#333"
+          fontWeight="500"
+          transform={`rotate(-90, 12, ${altura / 2})`}
+        >
+          Comportamento de Apoio →
+        </text>
       </svg>
 
       {/* Tooltip */}
@@ -123,8 +147,8 @@ export default function GraficoCartesiano({
             left: tooltip.x + 10,
           }}
         >
-          <div>Capacidade = {tooltip.valorX}</div>
-          <div>Atitude = {tooltip.valorY}</div>
+          <div>Direção = {tooltip.valorX}</div>
+          <div>Apoio = {tooltip.valorY}</div>
         </div>
       )}
     </div>

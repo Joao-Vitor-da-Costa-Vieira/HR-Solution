@@ -1,20 +1,41 @@
-import { Link } from "react-router-dom";
-import "./Navegacao.css";
+import { Link } from "react-router-dom"
+import "./Navegacao.css"
 
-export function Navegacao(){
-    return (
-        <nav className="navegacao">
-            <Link to={"/"}>
-                • Home
-            </Link>
+import {
+  NavigationMenu,
+  NavigationMenuList,
+  NavigationMenuItem,
+  NavigationMenuLink,
+} from "@/components/ui/navigation-menu"
 
-            <Link to={"/crudSimples"}>
-                • Crud Simples
-            </Link>
-
-            <Link to={"/testes"}>
-                • Testes
-            </Link>
-        </nav>
-    );
+export function Navegacao() {
+  return (
+    <nav className="navegacao b">
+      <NavigationMenu>
+        <NavigationMenuList>
+          <NavigationMenuItem>
+            <NavigationMenuLink asChild>
+              <Link to="/"> Home</Link>
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+        </NavigationMenuList>
+      </NavigationMenu>
+    </nav>
+  )
 }
+
+/**
+
+<NavigationMenuItem>
+  <NavigationMenuLink asChild>
+    <Link to="/crudSimples"> Crud Simples</Link>
+  </NavigationMenuLink>
+</NavigationMenuItem>
+
+<NavigationMenuItem>
+  <NavigationMenuLink asChild>
+    <Link to="/testes"> Testes</Link>
+  </NavigationMenuLink>
+</NavigationMenuItem>
+
+ */

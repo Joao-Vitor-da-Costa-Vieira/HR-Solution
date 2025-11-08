@@ -47,9 +47,6 @@ public class Avaliacao {
     @Column(nullable = false)
     private LocalDate dataLimite;
 
-    @Column(nullable = false)
-    private Integer quantidadePerguntas;
-
     //Eixos do Perfil
 
     //Máximo atingível no eixo da Atitude
@@ -58,6 +55,9 @@ public class Avaliacao {
 
     @Column(nullable = true)
     private Integer EixoMaxCapacidade;
+
+    @Column(nullable = true)
+    private Integer EixoMaxDesempenho;
 
     //Eixos da Liderança
 

@@ -11,16 +11,13 @@ import lombok.Setter;
 @Setter
 @Table(name = "resposta_pergunta")
 public class RespostaPergunta {
-
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
     private Integer respostaEscolhida;
-
-    @Column(nullable = false)
-    private Integer pesoObtido;
 
     @ManyToOne
     @JoinColumn(name = "resposta_avaliacao_id")

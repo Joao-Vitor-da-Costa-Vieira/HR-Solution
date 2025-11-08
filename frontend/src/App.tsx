@@ -7,7 +7,7 @@ import { Avaliacao } from './pages/Avaliacao/Avaliacao';
 import { Analise } from './pages/Analise/Analise';
 import { Testes } from './pages/Testes/Testes';
 import { ProcessoSeletivo } from './pages/ProcessoSeletivo/ProcessoSeletivo';
-import { CriarAvaliacao } from './pages/CriarAvaliacao/CriarAvaliacao';
+import  CriarAvaliacao  from './pages/CriarAvaliacao/CriarAvaliacao';
 
 function App() {
   return (

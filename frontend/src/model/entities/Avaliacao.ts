@@ -7,10 +7,11 @@ export interface Avaliacao {
   criadoPor: string;
   criadoEm: string; // ISO date string (OffsetDateTime)
   dataLimite: Date;
-  quantidadePerguntas: number;
 
+  // Valores totais
   eixoMaxAtitude?: number;
   eixoMaxCapacidade?: number;
+  eixoMaxDesempenho?: number;
 
   liderancaComandanteTotal?: number;
   liderancaTreinadorTotal?: number;

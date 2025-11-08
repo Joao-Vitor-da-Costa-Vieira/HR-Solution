@@ -5,10 +5,11 @@ export interface RespostaAvaliacao {
   id?: number;
   nomeCandidato: string;
   emailCandidato: string;
-  dataAvaliacao: Date;
+  dataAvaliacao?: Date;
 
   eixoAtitude?: number;
   eixoCapacidade?: number;
+  eixoDesempenho?: number;
 
   eixoLiderancaComandante?: number;
   eixoLiderancaTreinador?: number;
