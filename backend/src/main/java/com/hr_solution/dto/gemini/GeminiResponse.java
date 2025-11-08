@@ -1,4 +1,4 @@
-package com.hr_solution.dto;
+package com.hr_solution.dto.gemini;
 
 import java.util.List;
 

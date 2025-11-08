@@ -7,8 +7,8 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import com.hr_solution.dto.GeminiRequest;
-import com.hr_solution.dto.GeminiResponse;
+import com.hr_solution.dto.gemini.GeminiRequest;
+import com.hr_solution.dto.gemini.GeminiResponse;
 
 @Service
 public class GeminiService {
@@ -21,9 +21,24 @@ public class GeminiService {
 
     private final RestTemplate restTemplate = new RestTemplate();
 
-    public String sendPrompt(String prompt) {
-        // build request
-        GeminiRequest request = GeminiRequest.fromPrompt(prompt);
+    private static final String CONTEXTO_FIXO = """
+        Você é um assistente do sistema HR Solution.
+        Suas respostas devem ser técnicas, claras e sempre relacionadas a Recursos Humanos,
+        gestão de pessoas e processos administrativos.
+        Evite respostas fora desse escopo.
+        """;
+
+    public String sendPromptWithContext(String contextoDinamico, String prompt) {
+
+        String fullPrompt = CONTEXTO_FIXO;
+
+        if (contextoDinamico != null && !contextoDinamico.isBlank()) {
+            fullPrompt += "\n\nContexto adicional:\n" + contextoDinamico;
+        }
+
+        fullPrompt += "\n\nUsuário: " + prompt;
+
+        GeminiRequest request = GeminiRequest.fromPrompt(fullPrompt);
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
@@ -40,11 +55,11 @@ public class GeminiService {
                 && !response.getCandidates().get(0).getContent().getParts().isEmpty()) {
 
             return response.getCandidates()
-                           .get(0)
-                           .getContent()
-                           .getParts()
-                           .get(0)
-                           .getText();
+                    .get(0)
+                    .getContent()
+                    .getParts()
+                    .get(0)
+                    .getText();
         }
 
         throw new RuntimeException("Empty or invalid response from Gemini API");
