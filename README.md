@@ -8,7 +8,11 @@ Solução desenvolvida para Hackaton da FATEC Mogi das Cruzes sobre aplicação 
 - MySQL
 
 ### Vídeo Demonstração
-![Demo](https://youtu.be/VCm6ufva1ik)
+[Link](https://youtu.be/VCm6ufva1ik)
+
+
+https://github.com/user-attachments/assets/7188209e-d6e0-406c-a515-4e65a55ee1c1
+
 
 ### Como executar
 
