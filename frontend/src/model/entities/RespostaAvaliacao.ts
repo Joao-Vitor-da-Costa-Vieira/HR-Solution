@@ -9,6 +9,7 @@ export interface RespostaAvaliacao {
 
   eixoAtitude?: number;
   eixoCapacidade?: number;
+  eixoDesempenho?: number;
 
   eixoLiderancaComandante?: number;
   eixoLiderancaTreinador?: number;

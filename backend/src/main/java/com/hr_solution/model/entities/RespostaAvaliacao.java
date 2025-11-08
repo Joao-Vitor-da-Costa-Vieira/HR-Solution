@@ -5,7 +5,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -35,6 +34,9 @@ public class RespostaAvaliacao {
 
     @Column(nullable = true)
     private Integer eixoCapacidade;
+
+    @Column(nullable = true)
+    private Integer eixoDesempenho;
 
     //Eixos da Liderança
 

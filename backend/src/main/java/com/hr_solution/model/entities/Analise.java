@@ -1,6 +1,8 @@
 package com.hr_solution.model.entities;
 
 
+import com.hr_solution.model.enuns.Quadrante;
+
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,6 +17,8 @@ public class Analise {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private Quadrante quadrante;
+
     //Eixos do Perfil
 
     //Máximo atingível no eixo da Atitude
@@ -23,6 +27,9 @@ public class Analise {
 
     @Column(nullable = true)
     private Integer EixoMaxCapacidade;
+
+    @Column(nullable = true)
+    private Integer EixoMaxDesempenho;
 
     //Eixos da Liderança
 
@@ -47,6 +54,9 @@ public class Analise {
 
     @Column(nullable = true)
     private Integer eixoCapacidade;
+
+    @Column(nullable = true)
+    private Integer eixoDesempenho;
 
     //Eixos da Liderança
 
