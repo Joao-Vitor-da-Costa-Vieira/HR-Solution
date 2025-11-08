@@ -7,6 +7,9 @@ Solução desenvolvida para Hackaton da FATEC Mogi das Cruzes sobre aplicação 
 - React
 - MySQL
 
+# Apresentação do Conceito Canvas
+https://www.canva.com/design/DAG4HXNByMQ/ENaVDXLys4XUHmyOvlKgFw/edit
+
 ### Vídeo Demonstração
 [Link](https://youtu.be/VCm6ufva1ik)
 
